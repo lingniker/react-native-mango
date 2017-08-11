@@ -9,3 +9,20 @@
   this.setState({arr:this.state.arr})
 ```           
  
+### 移除数组里的某个特定的元素
+将 arr 传进去判断索引的位置，最后使用splice进行切割，（splice的方法就是切割）
+
+```js
+onPress={()=>{
+for(var i=0;i<this.state.arr.length;i++)
+{
+   if(this.state.arr[i]===arr)
+  {
+   this.state.arr.splice(i,1);
+   break;
+   }
+ }
+this.setState({arr:this.state.arr})
+}}
+```
+     
