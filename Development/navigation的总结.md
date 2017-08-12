@@ -1,4 +1,6 @@
-# 关于导航栏的一些知识点（个人总结 有错请纠正  发送邮箱至 lingyuanping@outlook.com）
+# 关于导航栏的一些知识点
+  
+#### （个人总结 有错请纠正  发送邮箱至 lingyuanping@outlook.com）
 
 ## 引用 navigation 有一个函数 将你的组件变成 一个切换页面的函数 StackNavigation
 
