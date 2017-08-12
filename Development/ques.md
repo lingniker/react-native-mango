@@ -25,4 +25,48 @@ for(var i=0;i<this.state.arr.length;i++)
 this.setState({arr:this.state.arr})
 }}
 ```
+
+### 父组件拿到子组件的状态，通过父组件的回调函数 可以拿到子组件的状态。
+
+#### 在父组件上注册一个事件，通过子组件的调用，将数据返回给父组件
+
+#### 将父组件的状态传递给子组件arr=this.state.arr   子组件使用this.props.arr
+
+#### 这样就可以使得父组件与子组件进行数据的交互了
+
+```js
+  class Parents extends Component{
+    constructor(props){
+    super(props);
+    this.state={arr:[]};
+    }
+    
+    changeArr(arr){
+    this.setState({arr:arr});
+    }
+    
+    render(){
+    return(<Child changeArr={this.changArr.bind(this)}  arr=this.state.arr />)
+    }
+  }
+  
+  
+  class Child extends Component{
+    constructor(prors){
+    super(prors);
+    this.state={att:this.state.arr}
+    }
+    handlerPress(){
+    this.state.arr.push("123456");
+    this.setState({arr:this.state.arr});
+    this.props.changeArr(this.state.arr);
+    }
+     render(){
+     return(
+     <View onPress={this.handlerPress.bind(this)}></View>
+     )
      
+     }
+  }
+  
+  ```
